@@ -12,17 +12,17 @@
 
 <link rel="shortcut icon" href="juewei.ico">
 <link rel="Bookmark" href="juewei.ico">
-<link rel="stylesheet" type="text/css" href="/ws_duck/Public/Home/css/index.css">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/index.css">
 <!--[if lt IE 9]>
-<script src="/ws_duck/Public/Home/js/html5shiv.min.js"></script>
+<script src="/Public/Home/js/html5shiv.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="/ws_duck/Public/Home/js/jquery.min.js"></script>
-<script type="text/javascript" src="/ws_duck/Public/Home/js/slider.js"></script>
+<script type="text/javascript" src="/Public/Home/js/jquery.min.js"></script>
+<script type="text/javascript" src="/Public/Home/js/slider.js"></script>
 </head>
 <body>
 <div class="bj">
     <div class="header">
-        <h1><img src="/ws_duck/Public/Home/image/h1.png" width="301" height="28" /><br/><p>0766-7593512</p></h1>
+        <h1><img src="/Public/Home/image/h1.png" width="301" height="28" /><br/><p>0766-7593512</p></h1>
         <div class="nav">
             <ul>
                 <li><a href="http://www.whjkcy.com">首页</a></li>
@@ -36,13 +36,13 @@
     </div>
  <div class="banner">
   <ul>
-   <li><a href="#"><img src="/ws_duck/Public/Home/image/banner_02.jpg" width="601" height="330" /></a></li>
+   <li><a href="#"><img src="/Public/Home/image/banner_02.jpg" width="601" height="330" /></a></li>
   </ul>
  </div>
  <div class="index_main">
   <li class="index_main_l">
   <h2>最新动态</h2> 
-  <p><a href="http://www.whjkcy.com/html/News/">更多</a></p>
+  <p><a href="<?php echo U('Article/index');?>">更多</a></p>
    <ul>
     <li><div id="bt"><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0511/43.html" title="​鸭脖开店利润分析">​鸭脖开店利润分析</a></div><span><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0511/43.html">【详细】</a></span></li>
     <li><div id="bt"><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0509/41.html" title="​学习鸭脖技术，就到鸭脖全国加盟总部">​学习鸭脖技术，就到鸭脖全国加盟总部</a></div><span><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0509/41.html">【详细】</a></span></li>
@@ -77,6 +77,7 @@
  </ul>
 </div>
  
+
 <div class="footer"> &copy; Copyright 1998-2016&nbsp;www.whjkcy.com&nbsp;All Rights Reserved.武汉吉客餐饮管理有限公司 版权所有 &nbsp;鄂ICP备15013625号-2&nbsp; </div>
 </div>
 </body>
