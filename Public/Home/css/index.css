@@ -1,6 +1,6 @@
 @charset "utf-8";
 @charset "utf-8";
-html{color:#333;background:#fff;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background: url(bj.jpg) fixed;}
+html{color:#333;background:#fff;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background: url(../image/bj.jpg) fixed;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
 li,.il{display:inline-block;*display:inline;*zoom:1;vertical-align:top}
 body,button,input,select,textarea{font:14px/1.5 "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53"; }
@@ -31,7 +31,7 @@ a:hover{color:#f30}
 /*header*/
 .header{ width: 1000px; height: 120px; margin:0 auto;}
 .header h1{ font-family:"宋体"; font-size:40px; color: #C90000; margin-left: 6px; line-height: 36px; margin-top: 20px; display: inline-block;}
-.header h1 p{ font-family: Arial Black,Arial; font-weight: bold; color: #000; font-size: 36px; background: url(dianhua.png) no-repeat 20px center; padding-left: 50px; line-height: 40px;}
+.header h1 p{ font-family: Arial Black,Arial; font-weight: bold; color: #000; font-size: 36px; background: url(../image/dianhua.png) no-repeat 20px center; padding-left: 50px; line-height: 40px;}
 .header .nav{ display: inline-block; margin-left: 20px; width: 640px;}
 .nav li{ width: 16%; text-align:center;}
 .header .nav #xia{ height: auto; padding-top: 10px; width: 80px; margin: -6px auto; display: none; position:relative; z-index: 999; }
@@ -47,7 +47,7 @@ a:hover{color:#f30}
 .index_main h2{ width: 84px; height: 25px; background:#C90000; display: inline-block; font-size: 16px; color:#fff; text-align: center; line-height: 25px; margin-bottom: 10px; margin-top: 10px;}
 .index_main_l p{ float:right; margin-top: 20px;}
 .index_main_l ul{ width: 306px; overflow: hidden; background: #F7EFD9; }
-.index_main_l ul li{ background:url(xiaodian.gif) no-repeat 10px center; padding-left: 20px; height: 36px;width: 290px; position: relative;}
+.index_main_l ul li{ background:url(../image/xiaodian.gif) no-repeat 10px center; padding-left: 20px; height: 36px;width: 290px; position: relative;}
 .index_main_l #bt{ width: 222px; overflow:hidden;display: block; line-height: 36px; height: 36px;}
 .index_main_l ul li span{ position: absolute; top:8px; right: 0;}
 
@@ -64,11 +64,11 @@ a:hover{color:#f30}
 .main .main_l{ display:inline-block; width: 126px; padding-left: 8px; margin-top: 15px;}
 .main_l dl{ height:auto;}
 .main_l dl dt{ font-size: 18px; color: #000; font-weight:600; text-align: center;}
-.main_l dl dd{ background: url(yuandiao.jpg) no-repeat 10px center; padding-left: 30px; height: 30px; margin-top: 10px; line-height: 30px;}
+.main_l dl dd{ background: url(../image/yuandiao.jpg) no-repeat 10px center; padding-left: 30px; height: 30px; margin-top: 10px; line-height: 30px;}
 .main_l dl dd a{ font-size: 18px; color:#000;}
-.main_l dl dd:hover{ background: #CA0000 url(baise.png) no-repeat 10px center; }
+.main_l dl dd:hover{ background: #CA0000 url(../image/baise.png) no-repeat 10px center; }
 .main_l dl dd a:hover{ color: #fff; }
-.main_l dl #line{ background: #CA0000 url(baise.png) no-repeat 10px center;}
+.main_l dl #line{ background: #CA0000 url(../image/baise.png) no-repeat 10px center;}
 .main_l dl #line a{ color:#fff;}
 
 .main_r{ width: 746px; height: auto; padding-top: 10px; margin-left: 40px;}
@@ -101,7 +101,7 @@ a:hover{color:#f30}
 .main .mainon dd{ font-size:12px; color:#4B4B4B; height: 85px; border-bottom:1px solid #A7A7A7; margin-top: 10px; line-height: 26px;}
 .main .mainon dd h2 a{ font-size: 16px; color:#000; }
 .main .mainon dd span a{ float:right; font-size:16px; color:#D7000F;}
-
+/
 
 /*文字详情*/
 .main_top h3{ font-size:24px; color: #000; margin-top: 20px;}
@@ -111,7 +111,7 @@ a:hover{color:#f30}
 
 .main_btm p{ font-size:18px; font-weight: 600; color:#000; margin-left:16px;}
 .main_btm ol{ border-top: 1px solid #808080; padding-top: 10px; margin: 10px 0 30px 16px;}
-.main_btm ol li{ margin-right: 170px; height: 30px; line-height: 30px; background: url(xiaodian.gif) no-repeat left center; padding-left: 10px;}
+.main_btm ol li{ margin-right: 170px; height: 30px; line-height: 30px; background: url(../image/xiaodian.gif) no-repeat left center; padding-left: 10px;}
 .main_btm ol li a{ color: #000;}
 .main_btm ol li a:hover{color:#f30}
 
