@@ -1,0 +1,29 @@
+<div id='mask_box' style="height:682px">
+
+	<div id='mask_box_header'><notempty name='id'>编辑产品<else/>新增产品</notempty></div>
+	
+	<div id='mask_box_content'>
+		<empty name='id'>
+			<form action='{:U("add")}' class='modal_form' method="post">
+		<else/>
+			<form action='{:U("edit")}' class='modal_form' method="post">
+		</empty>
+			<table style='width:100%;margin:auto;'>
+			<tr><td>标题：</td><td></td></tr>
+			<tr><td>图片：</td><td></td></tr>
+			<input type='hidden' name='id' value='{$laboratory.id}'>
+			<table>
+			
+			<div id='mask_box_footer'>
+				<input type='submit' value='确定'>
+				<input type='button' onclick='remove_mask_box();' value='取消'>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script>
+	$('#mask_box_footer input[type="submit"]').click(function(){
+		return ajax_post();
+	});
+</script>
