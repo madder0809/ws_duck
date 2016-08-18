@@ -26,7 +26,7 @@
         <h1><img src="/Public/Home/image/h1.png" width="301" height="28" /><br/><p>0766-7593512</p></h1>
         <div class="nav">
             <ul>
-                <li><a href="<?php echo U('index');?>">首页</a></li>
+                <li><a href="<?php echo U('Index/index');?>">首页</a></li>
                 <li><a href="<?php echo U('Show/intruduce');?>">关于我们</a>
                     <dl id="xia">
                         <dd><a href="<?php echo U('Show/intruduce');?>">公司简介</a></dd>

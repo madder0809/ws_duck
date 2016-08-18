@@ -90,7 +90,7 @@ a:hover{color:#f30}
 
 /*产品展示*/
 .main h3{display:inline-block; font-size: 20px; color: #000; margin-left: 14px; margin-top: 10px;}
-.main ul{ color:#97130C; position:absolute; right:16px; top: 26px; }
+.main ul{ color:#97130C;top: 26px; }
 .main li a{ color: #97130C;}
 .main .tupian .zs{ margin-top: -10px; padding-left: 14px;}
 .main .tupian .zs li{ width:295px; margin-top:40px;margin-right:10px;}
