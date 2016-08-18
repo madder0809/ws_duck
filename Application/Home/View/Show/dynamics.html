@@ -26,7 +26,7 @@
   	<dd>
 	<h2>
 	<a href="{:U('Article/view',array('id'=>$vo['id']))}">{$vo.title}</a></h2>
-	{$vo.content|htmlspecialchars_decode|sub_str=###,0,80,'utf-8'}<span>
+	{$vo.content|htmlspecialchars_decode|strip_tags|sub_str=###,0,80,'utf-8'}<span>
 	<a href="{:U('Article/view',array('id'=>$vo['id']))}">【详细】</a></span>
 	</dd>
      </volist>
