@@ -37,7 +37,7 @@ class PublicController extends Controller {
     			$user['username'] = $admin_user['username'];
                 session('uid', $user['uid'],60*60);
     			S('usernmae', $user['username']);
-    			return $admin_user['uid'];
+    			return $admin_user['id'];
     		}
     	}
     	$this->error('用户不存在或密码错误');
