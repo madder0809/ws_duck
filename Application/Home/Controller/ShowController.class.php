@@ -40,7 +40,7 @@ class ShowController extends Controller {
         $data['prev'] = $article->where("id < {$id} AND type = {$data['current']['type']}")->order("id DESC")->find();
         $data['next'] = $article->where("id > {$id} AND type = {$data['current']['type']}")->order("id ASC")->find();
         //随机抽取六篇同类文章
-        $data['random'] = $article ->where("id <> {$id}")->order("NEWID()")->limit(6)->select();
+        $data['random'] = $article ->where("id <> {$id} AND type = {$data['current']['type']}")->order("RAND()")->limit(6)->select();
         $this->assign($data);
         $this->display();
     }
