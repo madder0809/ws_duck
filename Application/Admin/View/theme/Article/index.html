@@ -1,0 +1,58 @@
+<include file="Public/base"/>
+
+<div class='main'>
+	<div class="details">
+	    <h3>门户管理 > {$type_name}</h3>
+	</div>
+
+	<div class='header_action'>
+		<span>{$type_name}列表</span>
+		<div>
+			<a href='{:U("add",array("type"=>$type))}' class='header_btn'>发布</a>
+		</div>
+	</div>
+
+	<div class='main_content'>
+		<div class='header_seach'>
+			<form action="{:U('index',array('type'=>$type))}" method="post">
+			标题：<input type='text' name="title" value="{$title}">
+				  <input type="hidden" name="type" value="{$type}">
+			<input type="submit" value="查询">
+			</form>
+		</div>
+		
+		<table class='table'>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>标题</th>
+					<th>固定级别</th>
+					<th>点击</th>
+					<th>类型</th>
+					<th>状态</th>
+					<th>发布时间</th>
+					<th class='table_action' style="width: 250px">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="notice_list" id="list">
+					<tr>
+						<td>{$list.id}</td>
+						<td>{$list.title}</td>
+						<td>{$list.level}</td>
+						<td>{$list.views}</td>
+						<td>{$type[$list['type']]}</td>
+						<td>{$status[$list['status']]}</td>
+						<td>{$list.publishtime}</td>
+						<td>
+							<if condition="!$list['status']"><a href="{:U('audit',array(id=>$list[id],type=>$type))}" class="ask_audit table_btn">审核</a></if>
+							<a href="{:U('edit',array(id=>$list[id],type=>$type))}" class="table_btn">编辑</a>
+							<a href="{:U('del',array('id'=>$list[id],type=>$type))}" class='ask_del table_btn_info'>删除</a>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		{$_page}
+	</div>
+</div>
