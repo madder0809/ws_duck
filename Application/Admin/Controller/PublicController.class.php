@@ -13,7 +13,7 @@ class PublicController extends Controller {
     			$this->success('登录成功！', U('Index/index'));
     		}
     	}else{
-    		if(is_login() < 1 ){
+    		if(is_login() > 0 ){
     			$this->redirect('Index/index');
     		}else{
     			$this->display();
