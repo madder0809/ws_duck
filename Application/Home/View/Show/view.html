@@ -12,7 +12,7 @@
     </if>
     <if condition="$next">
     <dd>下一篇：<a href="{:U('Show/view',array('id'=>$prev['id']))}">{$next.title}</a></dd>
-    <esle/>
+    <else/>
     <dd>下一篇：<a href="javascript:alert('这已经是最后一篇了')">最后一篇</a></dd>
     </if>
   </dl>
