@@ -33,7 +33,7 @@ class PublicController extends Controller {
     	if(is_array($admin_user)){
     		if(md5($password) == $admin_user['password']){
     			$user=array();
-    			$user['uid'] = $admin_user['uid'];
+    			$user['uid'] = $admin_user['id'];
     			$user['username'] = $admin_user['username'];
                 session('uid', $user['uid'],60*60);
     			S('usernmae', $user['username']);
@@ -41,5 +41,11 @@ class PublicController extends Controller {
     		}
     	}
     	$this->error('用户不存在或密码错误');
+    }
+
+    public function logout(){
+    	session('[destroy]');
+        session_destroy();
+    	redirect(U('public/login'));
     }
 }
