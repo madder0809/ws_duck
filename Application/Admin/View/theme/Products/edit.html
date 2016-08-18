@@ -9,9 +9,9 @@
 			<form action='{:U("edit")}' class='modal_form' method="post">
 		</empty>
 			<table style='width:100%;margin:auto;'>
-			<tr><td>标题：</td><td></td></tr>
+			<tr><td>标题：</td><td><input type="text" name="title" value="{$products.title}"></td></tr>
 			<tr><td>图片：</td><td></td></tr>
-			<input type='hidden' name='id' value='{$laboratory.id}'>
+			<input type='hidden' name='id' value='{$products.id}'>
 			<table>
 			
 			<div id='mask_box_footer'>

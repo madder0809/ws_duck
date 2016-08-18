@@ -10,20 +10,54 @@ class ProductsController extends AdminController {
      #添加
     public function add(){
         if(IS_POST){
-            $laboratory = M("laboratory");
-            if($laboratory->validate($this->validate)->create()){
-                if($laboratory->add()){
+            $products = M("products");
+            if($products->validate($this->validate)->create()){
+                if($products->add()){
                     $this->success("添加成功",U("index"));
                 }else{
                     $this->error("添加失败");
                 }
             }else{
-                $this->error($laboratory->getError());
+                $this->error($products->getError());
             }
         }else{
-            $data['admin_user'] = $this->admin_user_list;
+            $this->ajaxReturn($this->fetch('edit'));
+        }
+    }
+
+    #编辑
+    public function edit(){
+        $id = I("id");
+        if(!$id) $this->error("出错了");
+        $products = M("products");
+        if(IS_POST){
+            if($products->validate($this->validate)->create()){
+                if($products->save()!==false){
+                    $this->success("编辑成功",U("index"));
+                }else{
+                    $this->success("编辑失败",U("index"));
+                }
+            }else{
+                $this->error($products->getError());
+            }
+        }else{
+            $data['id'] = $id;
+            $data['products'] = $products->find($id);
             $this->assign($data);
             $this->ajaxReturn($this->fetch('edit'));
+        }
+    }
+
+    #删除
+    public function del(){
+        $id = I('id');
+        if(empty($id)){
+            $this->error('出错了');
+        }
+        if(M("products")->delete($id)){
+            $this->success('删除成功', U('index'));
+        }else{
+            $this->error('删除失败');
         }
     }
 }
