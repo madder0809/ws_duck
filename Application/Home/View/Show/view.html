@@ -11,7 +11,7 @@
       <dd>上一篇：<a href="javascript:alert('这已经是第一篇了')">​第一篇</a></dd>
     </if>
     <if condition="$next">
-    <dd>下一篇：<a href="{:U('Show/view',array('id'=>$prev['id']))}">{$next.title}</a></dd>
+    <dd>下一篇：<a href="{:U('Show/view',array('id'=>$next['id']))}">{$next.title}</a></dd>
     <else/>
     <dd>下一篇：<a href="javascript:alert('这已经是最后一篇了')">最后一篇</a></dd>
     </if>
@@ -20,22 +20,11 @@
  <div class="main_btm">
     <p>阅读详情</p>
     <ol>
-    <li>
-    <a href="{}" title="​鸭脖开店利润分析">​鸭脖开店利润分析</a>
-    </li>
-    <li>
-    <a href="{}" title="​学习鸭脖技术，就到鸭脖全国加盟总部">​学习鸭脖技术，就到鸭脖全国加盟总部</a></li>
-    <li>
-    <a href="{}" title="鸭脖加盟流程">鸭脖加盟流程</a></li>
-    <li><a href="{}" title=" 特色餐饮加盟项目 鸭脖市场最火"> 特色餐饮加盟项目 鸭脖市场最火</a>
-    </li>
-    <li>
-    <a href="{}" title="鸭脖有多火，5000家门店遍布全国！">鸭脖有多火，5000家门店遍布全国！</a>
-    </li>
-    <li>
-    <a href="{}" title="当老板不是梦鸭脖您投资的首选！">当老板不是梦鸭脖您投资的首选！
-    </a>
-    </li>
+    <volist name="random" id="vo">
+      <li>
+      <a href="{:U('Show/view',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a>
+      </li>
+    </volist>
     </ol>
  </div>
 </div>
