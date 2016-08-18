@@ -33,6 +33,14 @@ class ShowController extends Controller {
         $this->display();
     }
     public function view(){
-        
+        $id = I("id");
+        $type = $this->type;
+        if(!$id) $this->error("出错，未找到文章");
+        $article = M("article");
+        $data['current'] = $article->find($id);
+        $data['prev'] = $article->where("id < {$id} AND type = {$type}")->order("id DESC")->find();
+        $data['next'] = $article->where("id > {$id} AND type = {$type}")->order("id ASC")->find();
+        $this->assign($data);
+        $this->display();
     }
 }

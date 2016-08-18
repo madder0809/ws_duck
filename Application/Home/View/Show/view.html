@@ -1,11 +1,12 @@
 <div class="main">
  <div class="main_top">
-  <h3>​{$title}</h3>
+  <h3>​{$current.title}</h3>
   <div>
-      {$content}
+      {$current.content|htmlspecialchars_decode}
   </div>
   <dl>
-    <dd>上一篇：<a href="">​</a></dd>
+
+    <dd>上一篇：<a href="{$prev ? U('Show/view',array('id'=>$prev['id'])) : 'javascript:alert("当前为第一页")'}">​</a></dd>
     <dd>下一篇：<a href=""></a></dd>
   </dl>
  </div>
