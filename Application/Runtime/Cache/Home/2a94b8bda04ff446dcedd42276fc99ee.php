@@ -13,6 +13,7 @@
 <link rel="shortcut icon" href=/Public/Home/image/"LOGO.ico">
 <link rel="Bookmark" href="/Public/Home/image/LOGO.ico">
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/index.css">
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/page.css">
 <!--[if lt IE 9]>
 <script src="/Public/Home/js/html5shiv.min.js"></script>
 <![endif]-->
@@ -41,9 +42,9 @@
                 </li>
                 <li><a href="<?php echo U('Products/index');?>">产品展示</a></li>
                 <li>
-                    <a href="<?php echo U('Products/index');?>">加盟问答</a>
+                    <a href="<?php echo U('Question/index');?>">加盟问答</a>
                     <dl id="xia">
-                        <dd><a href="<?php echo U('Products/index');?>">常见问题</a></dd>
+                        <dd><a href="<?php echo U('Question/index');?>">常见问题</a></dd>
                         <dd><a href="<?php echo U('Question/budget');?>">投资预算</a></dd>
                         <dd><a href="<?php echo U('Question/condition');?>">加盟条件</a></dd>
                         <dd><a href="<?php echo U('Qusetion/process');?>">加盟流程</a></dd>
