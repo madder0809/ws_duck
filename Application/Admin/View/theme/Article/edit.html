@@ -1,17 +1,17 @@
 <include file="Public/base"/>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <link href="__PUBLIC__/Admin/css/calendar.css" rel="stylesheet">
-<link href="__ROOT__/Addons/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet">
-<link href="__ROOT__/Addons/kindeditor/plugins/code/prettify.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="__ROOT__/Addons/kindeditor/kindeditor-all.js"></script>
-<script type="text/javascript" src="__ROOT__/Addons/kindeditor/lang/zh-CN.js"></script>
-<script type="text/javascript" src="__ROOT__/Addons/kindeditor/plugins/code/prettify.js"></script>
+<link href="__PUBLIC__/Admin/js/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/js/kindeditor/plugins/code/prettify.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/kindeditor/kindeditor-all.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/kindeditor/lang/zh-CN.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/kindeditor/plugins/code/prettify.js"></script>
 <script>
 		KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="content"]', {
-				cssPath : '__ROOT__/Addons/kindeditor/plugins/code/prettify.js',
-				uploadJson : '__ROOT__/Addons/kindeditor/php/upload_json.php',
-				fileManagerJson : '__ROOT__/Addons/kindeditor/php/file_manager_json.php',
+				cssPath : '__PUBLIC__/Admin/js/kindeditor/plugins/code/prettify.js',
+				uploadJson : '__PUBLIC__/Admin/js/kindeditor/php/upload_json.php',
+				fileManagerJson : '___PUBLIC__/Admin/js/kindeditor/php/file_manager_json.php',
 				allowFileManager : true
 			});
 			prettyPrint();
