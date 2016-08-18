@@ -30,7 +30,7 @@
             <img src="__PUBLIC__/Admin/Images/1.jpg" height="500" width="500">
            	 {$username}
             </a>
-            <div class="set_up" id="set_up" style="display:none;">
+            <div class="set_up" id="set_up">
                 <a href="{:U('Index/personal')}"><i class="fa-user"></i>个人中心</a>
                 <i class="wire"></i>
                 <a href="{:U('Public/edit_password')}" class='modal'><i class="fa-lock"></i>修改密码</a>
@@ -45,7 +45,7 @@
 <div class='_menu'>
 	<foreach name="_menu" item="second">
 		<ul>
-			<a href='{:U($second[name])}'><i class='fa {$second.icon}'></i>{$second.title}</a>
+			<a href='{:U("Article/index",array("type"=>$key))}'><i class='fa {$second.icon}'></i>{$second}</a>
 		</ul>
 	</foreach>
 </div>
