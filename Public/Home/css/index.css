@@ -130,5 +130,5 @@ a:hover{color:#f30}
 .zhichi ul li a{ color:#000;}
 .footer{ width:1000px; height: 70px; background: #D6C1B0; text-align:center;line-height:70px; font-size:12px; margin:0 auto;}
 
-
-
+/* 文章展示 */
+#a_content{padding: 27px;}

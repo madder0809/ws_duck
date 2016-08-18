@@ -1,12 +1,15 @@
 <div class="main">
  <div class="main_top">
   <h3>​{$current.title}</h3>
-  <div>
+  <div id="a_content">
       {$current.content|htmlspecialchars_decode}
   </div>
   <dl>
-
-    <dd>上一篇：<a href="{$prev ? U('Show/view',array('id'=>$prev['id'])) : 'javascript:alert("当前为第一页")'}">​</a></dd>
+    <if condition="$prev">
+      <dd>上一篇：<a href="{:U('Show/view',array('id'=>$prev['id']))}">​{$prev.title}</a></dd>
+    <else/>
+      <dd>上一篇：<a href="javascript:alert('这已经是第一篇了')">​第一篇</a></dd>
+    </if>
     <dd>下一篇：<a href=""></a></dd>
   </dl>
  </div>
