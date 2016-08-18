@@ -8,7 +8,7 @@
 	<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet">
 	<link href="__PUBLIC__/Admin/css/mask_box.css" rel="stylesheet">
 	<link href="__PUBLIC__/Admin/css/page.css" rel="stylesheet">
-	<script src="__ROOT__/Addons/My97DatePicker/WdatePicker.js"></script>
+	<script src="__ROOT__/Admin/js/My97DatePicker/WdatePicker.js"></script>
 	<link href="__PUBLIC__/Admin/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
@@ -20,10 +20,9 @@
 	</div>
 	<div class='nav'>
 		<a class='nav_itme' href='{:U("Index/index")}'>首页</a>
-		<a class='nav_itme' href=''>文章管理</a>
-		<a class='nav_itme' href=''>产品管理</a>
+		<a class='nav_itme' href='{:U("Article/index")}'>文章管理</a>
+		<a class='nav_itme' href='{:U("Products/index")}'>产品管理</a>
 	</div>
-	
     <div class="news">
         <a href="{:U('Index/personal',array('tag'=>1))}" id="news"><if condition="$unread_num"><i>{$unread_num}</i></if></a>
         <div class="personal">
@@ -46,16 +45,7 @@
 <div class='_menu'>
 	<foreach name="_menu" item="second">
 		<ul>
-			<if condition="$second.name eq '#node'">
-				<a href='#' class='tp_plus'><i class='fa {$second.icon}'></i>{$second.title}</a>
-				<foreach name="second[_child]" item="third">
-					<li>
-						<a href='{:U($third[name])}'>{$third.title}</a>
-					</li>
-				</foreach>
-			<else/>
-				<a href='{:U($second[name])}'><i class='fa {$second.icon}'></i>{$second.title}</a>
-			</if>
+			<a href='{:U($second[name])}'><i class='fa {$second.icon}'></i>{$second.title}</a>
 		</ul>
 	</foreach>
 </div>
