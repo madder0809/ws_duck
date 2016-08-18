@@ -32,4 +32,7 @@ class ShowController extends Controller {
     public function contact(){
         $this->display();
     }
+    public function view(){
+        
+    }
 }
