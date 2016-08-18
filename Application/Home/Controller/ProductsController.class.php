@@ -5,4 +5,7 @@ class ProductsController extends Controller {
     public function index(){
         $this->display();
     }
+    public function view(){
+    	$this->display();
+    }
 }

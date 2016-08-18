@@ -28,23 +28,15 @@
    </ul>  
   <div class="mainon">
    <dl>
+   <volist name="list" id="vo">
   	<dd>
-      <h2><a href="http://www.whjkcy.com/html/2015/changjianwenti_0511/44.html">开个鸭脖加盟店利润怎么样？</a></h2>鸭脖加盟店的利润还是很可观的，首先要看您选的地段好不好，做的好的一年赚几十万都很正常，一般的情况下一年赚个十万左右不是问题。<span><a href="http://www.whjkcy.com/html/2015/changjianwenti_0511/44.html">【详细】</a></span>
+      <h2><a href="{:U('Article/view',array('id'=>$vo['id']))}">{$vo.title}</a>
+      </h2>{$vo.content}
+      <span><a href="{:U('Article/view',array('id'=>$vo['id']))}">【详细】</a></span>
     </dd>
-    <dd>
-      <h2><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/38.html">​我可以不按照鸭脖总部的方案进行装修吗？</a></h2>可以的，总部对加盟商的要求很宽松，您可以结合自己的实际情况灵活调整自己的经营方式。<span><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/38.html">【详细】</a></span>
-    </dd>
-    <dd>
-      <h2><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/37.html">​产品是我们自己加工还是鸭脖总部直接发成品？</a></h2>自己加工。很早以前我们是统一配货，后期研究发现，加盟店开店重点在于制作工艺，因此我们目前把重点放在培训制作工艺，对加盟商会进行原材料采购的指导，具体的原材料采购完全可以在<span><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/37.html">【详细】</a></span>
-    </dd>
-    <dd>
-      <h2><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/36.html">​开鸭脖加盟店需要办理哪些手续呢？</a></h2>开鸭脖店，需要营业执照、税务登记证、卫生许可证。这些一般是自己办理的，我们总部会在培训的时候给予详细的指导，后期办理也容易，<span><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/36.html">【详细】</a></span>
-    </dd>
-    <dd>
-      <h2><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/35.html">​口味能否做得和鸭脖总部一样？适不适合我们当地人</a></h2>答：我们的鸭脖技术都是统一培训，确保口味一致，我们的鸭脖产品是适合全国的大多数人的口味的，这也是我们经过市场调查后得出的科学结论。您学会后就可以根据当地的口味和饮食习惯在<span><a href="http://www.whjkcy.com/html/2015/changjianwenti_0430/35.html">【详细】</a></span>
-    </dd>
+    </volist>
     </dl>
-  <div class="page"><a class="a1">12条</a> <a href="/html/jiamengwenda/changjianwenti/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/jiamengwenda/changjianwenti/2.html">2</a> <a href="/html/jiamengwenda/changjianwenti/3.html">3</a> <a href="/html/jiamengwenda/changjianwenti/2.html" class="a1">下一页</a></div>
+  <div class="page">{$_page}</div>
   </div>
  </li>
 </div>
