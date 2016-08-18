@@ -30,9 +30,9 @@
    <dl>
    <volist name="list" id="vo">
   	<dd>
-      <h2><a href="{:U('Article/view',array('id'=>$vo['id']))}">{$vo.title}</a>
-      </h2>{$vo.content}
-      <span><a href="{:U('Article/view',array('id'=>$vo['id']))}">【详细】</a></span>
+      <h2><a href="{:U('Show/view',array('id'=>$vo['id']))}">{$vo.title}</a>
+      </h2>{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,80,'utf-8'}
+      <span><a href="{:U('Show/view',array('id'=>$vo['id']))}">【详细】</a></span>
     </dd>
     </volist>
     </dl>
