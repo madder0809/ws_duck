@@ -87,21 +87,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><div>固定级别：</div></td>
-                            <td><input type='text' name='level' value='{$info['level']?$info['level']:0}'><span class='mest_input'>*</span></td>
+                            <td><div>排序：</div></td>
+                            <td><input type='text' name='listorder' value='{$info['listorder']?$info['listorder']:0}'><span class='mest_input'>*</span></td>
                         </tr>
-                        <tr>
-                            <td><div>状态：</div></td>
-                            <td>
-                                <select name='status' style='width:255px;height:30px;'>
-                                    <foreach name="status" item="s">
-                                        <option value="{$key}" <if condition="$key == $info['status']"> selected="selected" </if>>{$s}</option>
-                                    </foreach>
-                                </select>
-                                <span class='mest_input'>*</span>
-                            </td>
-                        </tr>
-
                         <tr>
                             <td><div>发布时间：</div></td>
                             <td>
