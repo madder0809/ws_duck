@@ -11,7 +11,7 @@ class ArticleController extends AdminController {
 
 	public function _initialize(){
 		parent::_initialize();
-		$type = I("get.type") ? I("get.type") : 1;//默认为1
+		$type = I("type") ? I("type") : 1;//默认为1
 		$this->type = $type;
 	}
 
@@ -19,6 +19,8 @@ class ArticleController extends AdminController {
     	$type = $this->type;
     	$menu = array(1=>"新闻动态",2=>"行业动态",3=>"常见问题");
     	$list = M("article")->where("type = {$type}")->order("id DESC")->select();
+    	$type_name = $menu[$type];
+    	$this->assign("type_name",$type_name);
     	$this->assign("list",$list);
     	$this->assign("_menu",$menu);
         $this->display();
