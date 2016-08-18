@@ -10,7 +10,11 @@
     <else/>
       <dd>上一篇：<a href="javascript:alert('这已经是第一篇了')">​第一篇</a></dd>
     </if>
-    <dd>下一篇：<a href=""></a></dd>
+    <if condition="$next">
+    <dd>下一篇：<a href="{:U('Show/view',array('id'=>$prev['id']))}">{$next.title}</a></dd>
+    <esle/>
+    <dd>下一篇：<a href="javascript:alert('这已经是最后一篇了')">最后一篇</a></dd>
+    </if>
   </dl>
  </div>
  <div class="main_btm">
