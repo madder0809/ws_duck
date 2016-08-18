@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>教学实验资源点播共享平台</title>
+	<script src="__PUBLIC__/jquery-2.1.1.min.js"></script>
+	<script src="__PUBLIC__/Admin/js/common.js"></script>
+	<link href="__PUBLIC__/Admin/css/admin.css" rel="stylesheet">
+	<link href="__PUBLIC__/Admin/css/mask_box.css" rel="stylesheet">
+	<link href="__PUBLIC__/Admin/css/page.css" rel="stylesheet">
+	<script src="__ROOT__/Addons/My97DatePicker/WdatePicker.js"></script>
+	<link href="__PUBLIC__/Admin/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class='header'>
+	<div class='logo'>
+		武氏鸭管理平台
+	</div>
+	<div class='nav'>
+		<a class='nav_itme' href='{:U("Index/index")}'>首页</a>
+		<a class='nav_itme' href=''></a>
+		</foreach>
+	</div>
+	
+    <div class="news">
+        <a href="{:U('Index/personal',array('tag'=>1))}" id="news"><if condition="$unread_num"><i>{$unread_num}</i></if></a>
+        <div class="personal">
+            <a href="javascript:void(0);">
+            <img src="__PUBLIC__/Admin/Images/1.jpg" height="500" width="500">
+           	 {$username}
+            </a>
+            <div class="set_up" id="set_up" style="display:none;">
+                <a href="{:U('Index/personal')}"><i class="fa-user"></i>个人中心</a>
+                <i class="wire"></i>
+                <a href="{:U('Public/edit_password')}" class='modal'><i class="fa-lock"></i>修改密码</a>
+                <a href="{:U('Public/Logout')}"><i class="fa-sign-out"></i>安全退出</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id='mask_bg'></div>
+
+<div class='_menu'>
+	<foreach name="_menu" item="second">
+		<ul>
+			<if condition="$second.name eq '#node'">
+				<a href='#' class='tp_plus'><i class='fa {$second.icon}'></i>{$second.title}</a>
+				<foreach name="second[_child]" item="third">
+					<li>
+						<a href='{:U($third[name])}'>{$third.title}</a>
+					</li>
+				</foreach>
+			<else/>
+				<a href='{:U($second[name])}'><i class='fa {$second.icon}'></i>{$second.title}</a>
+			</if>
+		</ul>
+	</foreach>
+</div>
+
+<script>
+ 
+	$(function(){
+		var url = "{$current_url}"
+		if(url == ''){
+			url = window.location.pathname + window.location.search;
+		}
+		
+		var current_url = url.replace(/(\/(p)\/\d+)|(&p=\d+)|(\/(id)\/\d+)|(&id=\d+)|(\/(group)\/\d+)|(&group=\d+)/, "");
+		
+		var current = $('._menu').find('a[href="'+current_url+'"]');
+		if(current.parent('li')[0]){
+			// 二级菜单选中
+			current.parents('ul').find('> a').addClass('tp_minus');
+			current.parents('ul').find('li').addClass('tp_minus_li').slideDown();
+			current.addClass('second_menu_selected');
+		}else{
+			// 一级菜单选中
+			current.parent('ul').find('> a').addClass('menu_selected');
+		}
+        $(".show").hide();//隐藏wenben
+        $(".show:eq(0)").show();//显示第一个wenben
+        $("#switch a").click(function(){
+            $(".switch_show").removeClass("switch_show");//移除样式
+            $(this).addClass("switch_show");//添加样式
+            var i=$(this).index();//获得下标
+            $(".show").hide();//隐藏wenben
+            $(".show:eq("+i+")").show();//显示第i个wenben
+        });
+
+
+        //鼠标移到用户头像
+	    $(".personal").on("mouseenter", function () {
+	    	var $this = $(this);
+	    	$this.find(".set_up").show();
+		}).on("mouseleave", function () {
+		    var $this = $(this);
+		    $this.find(".set_up").hide();
+		});
+});
+</script>
+

@@ -1,0 +1,130 @@
+body{
+    background: url(../Images/wallpaper.png) no-repeat ;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+input{
+    outline:none;
+    padding-left: 2px;
+}
+p{
+    margin: 0;
+}
+button{
+    cursor:pointer;
+}
+i{
+    font-style:normal;
+}
+.backstage{
+    width: 1000px;
+    margin:0 auto;
+}
+.backstage img{
+    margin-top: 23%;
+}
+h1{
+    color: #666;
+    font-size: 36px;
+    line-height: 70px;
+    font-family: '方正粗体';
+    width: 1000px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+.heading{
+    background: #fff;
+    height: 70px;
+}
+.postil{
+    background: #000;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    filter:alpha(opacity=20);
+    -moz-opacity:0.2;
+    -khtml-opacity: 0.2;
+    opacity: 0.2;
+}
+.details{
+    color: #fff;
+    width:1000px;
+    margin:0 auto;
+}
+.details p {
+    margin: 0;
+    padding-left: 10px;
+    line-height: 30px;
+    width: 50%;
+    position: relative;
+    top: 53px;
+}
+.details span {
+    float: right;
+    padding-right: 10px;
+    position: relative;
+    top: -15px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: right;
+}
+.welcome_use{
+    width: 285px;
+    height: 320px;
+    background: #fff;
+    float: right;
+    margin: 23% 20px 0 0;
+}
+.welcome_use h3{
+    text-align: center;
+    color: #1e71a8;
+    font-size: 18px;
+    font-family: '微软雅黑';
+    margin: 10px 0 0;
+}
+.welcome_use input{
+    width:220px;
+    height:30px;
+    color:#a6a6a6;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+input.chosen{
+    width: 15px;
+    margin: 10px 5px 0 25px;
+    float: left;
+}
+.welcome_use span{
+    line-height: 50px;
+    color: #323232;
+}
+.welcome_use a{
+    float: right;
+    line-height: 50px;
+    margin-right: 20px;
+    color: #0071b3;
+}
+.welcome_use input[type=submit]{
+    color: #fff;
+    font-size: 16px;
+    background: #d74c32;
+    border:1px #c63418 solid;
+    width: 230px;
+    height: 45px;
+    display: block;
+    margin:0 auto;
+	cursor:pointer;
+}

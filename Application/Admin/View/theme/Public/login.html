@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link href="__PUBLIC__/Admin/css/login.css" rel="stylesheet">
+    <script src="__PUBLIC__/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div class="heading">
+    <h1>教学实验资源点播共享平台</h1>
+</div>
+<div class="backstage">
+    <img src="__PUBLIC__/Admin/Images/login.png" height="267" width="552">
+    <div class="welcome_use">
+        <h3 style="margin-top: 20px;">欢迎使用</h3>
+        <h3>教学实验资源点播共享平台</h3>
+        <form action="{:U('login')}" method="post" class="modal_form" onsubmit="return ajax_post();">
+	        <input type="text" placeholder="用户名" id='username' name='username' style="margin-top:15px;color:#444;" />
+	        <input type="password" placeholder="密码" name='password' style='color:#444;'/>
+	        <input type="checkbox" class="chosen "><span>下次自动登陆</span><a href="javascript:void();">忘记密码？</a>
+	        <input type="submit" value='登陆'/>
+        </form>
+    </div>
+</div>
+<div class="postil"></div>
+<div class="details">
+    <div style="position: absolute;width:1000px;bottom: 0;">
+        <p>版权所有©2014广州中医药大学</p>
+        <p>教育网 粤ICP备05008872号</p>
+        <p>电信网 粤ICP备05063128号</p>
+        <span>地址：广州市番禺区广州大学城外环东路232号广州中医药大学</span>
+        <span>总机：大学城 020-39358233 三元里 020-36588233  邮编：510006</span>
+    </div>
+</div>
+
+<script>
+	window.onload = function(){
+	    document.getElementById("username").focus();
+	}
+    function ajax_post(){
+        $.post($('.modal_form').attr('action'), $('.modal_form').serialize(), function(data){
+            if(data.status == '1'){
+                location.href=data.url;
+            }else{
+                alert(data.info);
+            }
+        },'json');
+        return false;
+    }
+</script>
+
+</body>
+</html>
