@@ -42,8 +42,8 @@
 				'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
 			},
 			buttonText:"上传图片",
-			'fileTypeExts': "*.flv;*.MP4;",//限制上传格式
-			'sizeLimit': 102400000,//限制大小
+			'fileTypeExts': "*.JPG;*.PNG;*.GIF",//限制上传格式
+			'sizeLimit': 2*1000*100,//限制大小
 			'swf'      : '__ROOT__/Addons/uploadify/uploadify.swf',
 			'uploadLimit':1,
 			'uploader' : '{:U("Public/upload")}',
