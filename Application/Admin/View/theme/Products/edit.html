@@ -10,7 +10,14 @@
 		</empty>
 			<table style='width:100%;margin:auto;'>
 			<tr><td>标题：</td><td><input type="text" name="title" value="{$products.title}"></td></tr>
-			<tr><td>图片：</td><td></td></tr>
+			<tr>
+				<td>图片：</td>
+				<td>
+					<span>
+							<input id="file_upload" name="file_upload" type="text">
+						</span>
+				</td>
+			</tr>
 			<input type='hidden' name='id' value='{$products.id}'>
 			<table>
 			
@@ -25,5 +32,52 @@
 <script>
 	$('#mask_box_footer input[type="submit"]').click(function(){
 		return ajax_post();
+	});
+	<?php $timestamp = time();?>
+	$(function() {
+		$('#file_upload').uploadify({
+			'formData'     : {
+				'timestamp' : '<?php echo $timestamp;?>',
+				'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+			},
+			buttonText:"上传图片",
+			'fileTypeExts': "*.flv;*.MP4;",//限制上传格式
+			'sizeLimit': 102400000,//限制大小
+			'swf'      : '__ROOT__/Addons/uploadify/uploadify.swf',
+			'uploadLimit':1,
+			'uploader' : '{:U("Public/upload")}',
+			'overrideEvents' : ['onSelectError'],
+			'onUploadSuccess' : function(file, data, response) {
+				$('#mask_box_footer').css('position', 'relative');
+				$('#mask_box').css('overflow', 'auto');
+				$("#" + file.id + " .cancel").click(function() {
+					var fileId = $(this).parents(".uploadify-queue-item").attr("id");
+					$('#input_' + file.id).remove();
+				});
+				var arr = eval('('+data+')');
+				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>"
+				$('#file_upload_box').append(file_input);
+			},
+			'onSelectError':function(file, errorCode, errorMsg){
+				var msgText = "上传失败\n";
+				switch (errorCode) {
+					case SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED:
+						this.queueData.errorMsg = msgText+"每次最多上传 " + this.settings.uploadLimit + "个文件";
+						break;
+					case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
+						this.queueData.errorMsg = msgText+"文件大小超过限制( " + this.settings.fileSizeLimit + " )";
+						break;
+					case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
+						this.queueData.errorMsg = msgText+"文件大小为0";
+						break;
+					case SWFUpload.QUEUE_ERROR.INVALID_FILETYPE:
+						this.queueData.errorMsg = msgText+"文件格式不正确，仅限 " + this.settings.fileTypeExts;
+						break;
+					default:
+						this.queueData.errorMsg = msgText+"错误代码：" + errorCode + "\n" + errorMsg;
+				}
+			},
+			'removeCompleted': false,
+		});
 	});
 </script>

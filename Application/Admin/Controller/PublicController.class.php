@@ -6,7 +6,6 @@ class PublicController extends Controller {
     function _initialize(){
         
     }
-
     function login(){
     	if(IS_POST){
     		if($this->verifyLogin(I('username'), I('password')) > 0){
@@ -48,4 +47,16 @@ class PublicController extends Controller {
         session_destroy();
     	redirect(U('public/login'));
     }
+
+	function upload(){
+		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
+		if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
+			include_once 'Application/Common/Common/UploadHandler.class.php';
+			$uploadHandler = new \UploadHandler();
+			$fileinfo = $uploadHandler->upload();
+			echo json_encode($fileinfo);
+			exit;
+		}
+		echo  "没有文件".empty($_FILES);
+	}
 }
