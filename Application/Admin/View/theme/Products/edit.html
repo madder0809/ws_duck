@@ -19,9 +19,15 @@
 						</span>
 				</td>
 			</tr>
+				<tr>
+					<td></td>
+					<td>
+						<div id="pic_box"></div>
+						<div id="file_box"></div>
+					</td>
+				</tr>
 			<input type='hidden' name='id' value='{$products.id}'>
 			<table>
-			
 			<div id='mask_box_footer'>
 				<input type='submit' value='确定'>
 				<input type='button' onclick='remove_mask_box();' value='取消'>
@@ -49,8 +55,7 @@
 			'uploader' : '{:U("Public/upload")}',
 			'overrideEvents' : ['onSelectError'],
 			'onUploadSuccess' : function(file, data, response) {
-				$('#mask_box_footer').css('position', 'relative');
-				$('#mask_box').css('overflow', 'auto');
+				
 				$("#" + file.id + " .cancel").click(function() {
 					var fileId = $(this).parents(".uploadify-queue-item").attr("id");
 					$('#input_' + file.id).remove();
