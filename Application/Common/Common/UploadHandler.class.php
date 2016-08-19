@@ -1,5 +1,6 @@
 <?php
 namespace Admin\Controller;
+use Think\Controller;
 class UploadHandler extends Controller{
     public function upload() {
         import('Org.Net.UploadFile');
@@ -27,7 +28,7 @@ class UploadHandler extends Controller{
                 $this->error("上传目录 ".$dir." 不存在！");
             }
         }
-        $dir .= '/video/';
+        $dir .= '/photo/';
         if(!is_dir($dir)) {
             if(!mkdir($dir, '0777')){
                 $this->error("上传目录 ".$dir." 不存在！");
