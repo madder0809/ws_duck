@@ -52,7 +52,7 @@ class PublicController extends Controller {
 		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
 		if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
 			include_once 'Application/Common/Common/UploadHandler.class.php';
-			$uploadHandler = new \UploadHandler();
+			$uploadHandler = new UploadHandler();
 			$fileinfo = $uploadHandler->upload();
 			echo json_encode($fileinfo);
 			exit;
