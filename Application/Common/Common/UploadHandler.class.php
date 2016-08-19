@@ -1,5 +1,6 @@
 <?php
-class UploadHandler {
+namespace Admin\Controller;
+class UploadHandler extends Controller{
     public function upload() {
         import('Org.Net.UploadFile');
         $upload = new \UploadFile();

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="febc9c8d-5802-46aa-a77f-6d00895e5558" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/theme/Products/edit.html" afterPath="$PROJECT_DIR$/Application/Admin/View/theme/Products/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Common/UploadHandler.class.php" afterPath="$PROJECT_DIR$/Application/Common/Common/UploadHandler.class.php" />
     </list>
     <ignored path="ws_duck.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/theme/Products/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3620438">
+            <state vertical-scroll-proportion="-8.0">
               <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -49,8 +49,18 @@
       <file leaf-file-name="PublicController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/PublicController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state vertical-scroll-proportion="-3.096774">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadHandler.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Common/Common/UploadHandler.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6656934">
+              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -85,9 +95,9 @@
         <option value="$PROJECT_DIR$/../gzucm/Application/Admin/View/theme/Index/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/theme/Index/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/theme/Public/base.html" />
-        <option value="$PROJECT_DIR$/Application/Common/Common/UploadHandler.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/PublicController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/theme/Products/edit.html" />
+        <option value="$PROJECT_DIR$/Application/Common/Common/UploadHandler.class.php" />
       </list>
     </option>
   </component>
@@ -197,6 +207,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws_duck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws_duck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -220,28 +252,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ws_duck" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ws_duck" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -616,6 +626,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34744525">
           <caret line="525" column="9" selection-start-line="525" selection-start-column="9" selection-end-line="525" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -637,6 +648,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10909091">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -709,21 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Common/Common/UploadHandler.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10526316">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/PublicController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../gzucm/Application/Admin/Controller/TestController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31578946">
@@ -734,11 +731,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/theme/Products/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3620438">
+        <state vertical-scroll-proportion="-8.0">
           <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/PublicController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.096774">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Common/UploadHandler.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6656934">
+          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
