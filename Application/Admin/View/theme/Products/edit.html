@@ -62,7 +62,7 @@
 				});
 				var arr = eval('('+data+')');
 				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>";
-				var img = "<div id='"+file.id+"''><img scr='"+data.path+"' ></div>";
+				var img = "<div class='pic_list_box' file_id='img_"+file.id+"''><img src='"+arr.path+"' ></div>";
 				$('#file_box').append(file_input);
 				$("#pic_box").append(img);
 			},
