@@ -1,5 +1,12 @@
 <script src="__ROOT__/Addons/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="__ROOT__/Addons/uploadify/uploadify.css">
+<style type="text/css">
+	.pic_list_box i{
+		position: absolute;
+    	color: red;
+    	cursor: pointer;
+	}
+</style>
 <div id='mask_box' style="height:682px">
 	<div id='mask_box_header'><notempty name='id'>编辑产品<else/>新增产品</notempty></div>
 	
@@ -58,11 +65,12 @@
 				
 				$("#" + file.id + " .cancel").click(function() {
 					var fileId = $(this).parents(".uploadify-queue-item").attr("id");
+					$("#img_" + file.id).find("i").click();
 					$('#input_' + file.id).remove();
 				});
 				var arr = eval('('+data+')');
 				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>";
-				var img = "<div class='pic_list_box' file_id='img_"+file.id+"''><img src='"+arr.path+"' ></div>";
+				var img = "<div class='pic_list_box' file_id='"+file.id+"' id='img_"+file.id+"''><i>删除</i><img src='"+arr.path+"' ></div>";
 				$('#file_box').append(file_input);
 				$("#pic_box").append(img);
 			},
@@ -88,4 +96,9 @@
 			'removeCompleted': false,
 		});
 	});
+
+	$(document).on("click",".pic_list_box > i",function(){
+		var id = $(this).parent().attr("file_id");
+		$("#" + file.id + " .cancel").click();
+	})
 </script>
