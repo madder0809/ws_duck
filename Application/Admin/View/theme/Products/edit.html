@@ -61,8 +61,10 @@
 					$('#input_' + file.id).remove();
 				});
 				var arr = eval('('+data+')');
-				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>"
-				$('#file_upload_box').append(file_input);
+				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>";
+				var img = "<div id='"+file.id+"''><img scr='"+data.path+"' ></div>";
+				$('#file_box').append(file_input);
+				$("#pic_box").append(img);
 			},
 			'onSelectError':function(file, errorCode, errorMsg){
 				var msgText = "上传失败\n";
