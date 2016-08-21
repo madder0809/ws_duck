@@ -22,7 +22,7 @@ class UploadHandler extends Controller{
     
     // 建立目录   /Uploads/Excel/
     function getSaveDir(){
-        $dir = "./Uploads";
+        $dir = "/Uploads";
         if(!is_dir($dir)) {
             if(!mkdir($dir, '0777')){
                 $this->error("上传目录 ".$dir." 不存在！");
