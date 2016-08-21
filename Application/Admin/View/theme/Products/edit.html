@@ -65,14 +65,15 @@
 				
 				$("#" + file.id + " .cancel").click(function() {
 					var fileId = $(this).parents(".uploadify-queue-item").attr("id");
-					$("#img_" + file.id).remove();
+					$("#img_" + file.id).find("i").click();
 					$('#input_' + file.id).remove();
+					$('#file_upload').uploadify('cancel',file.id);
 				});
 				var arr = eval('('+data+')');
 				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>";
-				var img = "<div class='pic_list_box' file_id='"+file.id+"' id='img_"+file.id+"''><img src='"+arr.path+"' ></div>";
-				$('#file_box').html(file_input);
-				$("#pic_box").html(img);
+				var img = "<div class='pic_list_box' file_id='"+file.id+"' id='img_"+file.id+"''><i>删除</i><img src='"+arr.path+"' ></div>";
+				$('#file_box').append(file_input);
+				$("#pic_box").append(img);
 			},
 			'onSelectError':function(file, errorCode, errorMsg){
 				var msgText = "上传失败\n";
@@ -97,4 +98,8 @@
 		});
 	});
 
+	$(document).on("click",".pic_list_box > i",function(){
+		var id = $(this).parent().attr("file_id");
+		$("#" + file.id + ".cancel ").click();
+	})
 </script>
