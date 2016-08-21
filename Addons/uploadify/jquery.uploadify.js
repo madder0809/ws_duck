@@ -354,6 +354,13 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 						$(this).remove();
 					});
 				}
+
+				//modified by xiezhi 2016-8-21
+				if(args[0]!='*'){//不是清空所有队列，而是指定队列或者未传递队列参数默认去掉第一个上传对象
+                 var cancelNum=args[0]?args.length:1;//得到被取消的队列数量
+                 swfuploadify.queueData.queueSize   -=cancelNum;
+                 swfuploadify.queueData.queueLength -= cancelNum;
+              	}
 			});
 
 		},
