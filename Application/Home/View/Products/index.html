@@ -3,7 +3,7 @@
 </style>
 <div class="main">
 <h3>产品展示</h3>
-<ul>
+<ul style="float:right">
 <li>您现在的位置：</li>
 <li>
 <a href="{:U('Index/index')}">首页</a>&gt;
@@ -15,7 +15,7 @@
         <volist name="list" id="vo">
           <li>
           <a href="{:U('Products/view',array('id'=>$vo['id']))}" title="{$vo.title}">
-          <img src="{$vo.url}" width="295" height="202">
+          <img src="__ROOT__/{$vo.url}" width="295" height="202">
           </a>
           <p>
           <a href="{:U('Products/view',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}

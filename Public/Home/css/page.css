@@ -84,8 +84,8 @@
       text-align: right;
     }
     .pagination .current, .pagination .current:hover{
-		background:#428bca;
+		background:#411401;
     	color:#ddd;
-    	border-top:1px solid #428bca;
-    	border-bottom:1px solid #428bca;
+    	border-top:1px solid #411401;
+    	border-bottom:1px solid #411401;
     }
