@@ -59,4 +59,13 @@ class PublicController extends Controller {
 		}
 		echo  "没有文件".empty($_FILES);
 	}
+
+    public function ajax_rm_img(){
+        if(IS_POST){
+            $path = I("path");
+            if(file_exists($path)){
+                $this->ajaxReturn(unlink($path));
+            }
+        }
+    }
 }

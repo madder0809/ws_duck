@@ -2,8 +2,14 @@
 namespace Admin\Controller;
 
 class ProductsController extends AdminController {
+    private $validate = array(
+        array('title', 'require', '标题不能为空'),
+        array('url', 'require', '图片不能为空'),
+        );
 
     public function index(){
+        $list = M("products")->order('id DESC')->select();
+        $this->assign("list",$list);
         $this->display();
     }
 
@@ -54,7 +60,11 @@ class ProductsController extends AdminController {
         if(empty($id)){
             $this->error('出错了');
         }
+        $path = M("products")->where("id = {$id}")->getField("url");
         if(M("products")->delete($id)){
+            if(file_exists($path)){
+                unlink($path);
+            }
             $this->success('删除成功', U('index'));
         }else{
             $this->error('删除失败');

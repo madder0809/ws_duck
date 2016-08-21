@@ -1,10 +1,14 @@
-<script src="__ROOT__/Addons/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+<script src="__ROOT__/Addons/uploadify/jquery.uploadify.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="__ROOT__/Addons/uploadify/uploadify.css">
 <style type="text/css">
 	.pic_list_box i{
 		position: absolute;
     	color: red;
     	cursor: pointer;
+	}
+	.pic_list_box img{
+		max-width: 300px;
+    	max-height: 300px;
 	}
 </style>
 <div id='mask_box' style="height:682px">
@@ -30,7 +34,9 @@
 					<td></td>
 					<td>
 						<div id="pic_box"></div>
-						<div id="file_box"></div>
+						<div id="file_box">
+							<div style='text-align:left' class='pic_list_box' file_id='' id=''><img src='{$products.url}'></div>
+						</div>
 					</td>
 				</tr>
 			<input type='hidden' name='id' value='{$products.id}'>
@@ -65,15 +71,21 @@
 				
 				$("#" + file.id + " .cancel").click(function() {
 					var fileId = $(this).parents(".uploadify-queue-item").attr("id");
+					var path = $("input[name='img_url']").val();
 					$("#img_" + file.id).remove();
 					$('#input_' + file.id).remove();
 					$('#file_upload').uploadify('cancel',file.id);
+					var swfu = $('#file_upload').data('uploadify');
+		            var stats = swfu.getStats();  
+		            stats.successful_uploads--;
+		            swfu.setStats(stats);
+		            rm_img(path);
 				});
 				var arr = eval('('+data+')');
-				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>";
-				var img = "<div style='text-align:left' class='pic_list_box' file_id='"+file.id+"' id='img_"+file.id+"''><i>删除</i><img src='"+arr.path+"' ></div>";
-				$('#file_box').append(file_input);
-				$("#pic_box").append(img);
+				var file_input = "<input type='hidden' id='input_"+file.id+"' name='url' value='"+arr.path+"' />";
+				var img = "<div style='text-align:left' class='pic_list_box' file_id='"+file.id+"' id='img_"+file.id+"''><i>X</i><img src='"+arr.path+"' ></div>";
+				$('#file_box').html(file_input);
+				$("#pic_box").html(img);
 			},
 			'onSelectError':function(file, errorCode, errorMsg){
 				var msgText = "上传失败\n";
@@ -101,8 +113,21 @@
 	$(document).on("click",".pic_list_box > i",function(){
 		var id = $(this).parent().attr("file_id");
 		$('#file_upload').uploadify('cancel',id);
+		var path = $("input[name='url']").val();
 		$("#img_" + id).remove();
 		$('#input_' + id).remove();
-					
+		var swfu = $('#file_upload').data('uploadify');
+        var stats = swfu.getStats();  
+        stats.successful_uploads--;
+        swfu.setStats(stats); 
+        rm_img(path);
 	})
+
+	function rm_img(path){
+		if(path){
+			var url = "{:U('Public/ajax_rm_img')}";
+			$.post(url,{path:path},function(data){
+			})
+		}
+	}
 </script>

@@ -1,3 +1,6 @@
+<style type="text/css">
+  .pagination{float: none;}
+</style>
 <div class="main">
 <h3>产品展示</h3>
 <ul>
@@ -9,38 +12,20 @@
 </ul>
   <div class="tupian">
    <ol class="zs">
+        <volist name="list" id="vo">
           <li>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/21.html" title="鸭舌，辣得让你爽，香得让你醉！">
-          <img src="http://www.027yb.net/uploadfile/2015/0509/20150509045408873.gif" width="295" height="202">
+          <a href="{:U('Products/view',array('id'=>$vo['id']))}" title="{$vo.title}">
+          <img src="{$vo.url}" width="295" height="202">
           </a>
           <p>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/21.html" title="鸭舌，辣得让你爽，香得让你醉！">鸭舌，辣得让你爽，香得让你醉！
+          <a href="{:U('Products/view',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}
           </a>
           </p>
           </li>
-          <li>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/20.html" title="虾——色泽绛红 香辣入骨"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045448666.gif" width="295" height="202">
-          </a>
-          <p>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/20.html" title="虾——色泽绛红 香辣入骨">虾——色泽绛红 香辣入骨</a>
-          </p>
-          </li>
-          <li>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/19.html" title="毛豆——翠绿鲜香 口感柔和"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045526784.gif" width="295" height="202"></a>
-          <p><a href="http://www.whjkcy.com/html/2015/Products_0430/19.html" title="毛豆——翠绿鲜香 口感柔和">毛豆——翠绿鲜香 口感柔和</a></p>
-          </li>
-          <li>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/18.html" title="藕片——入口脆嫩 味鲜爽口"><img src="http://www.027yb.net/uploadfile/2015/0511/20150511113322906.gif" width="295" height="202"></a>
-          <p><a href="http://www.whjkcy.com/html/2015/Products_0430/18.html" title="藕片——入口脆嫩 味鲜爽口">藕片——入口脆嫩 味鲜爽口</a></p>
-          </li>
-          <li>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/17.html" title="花生——佐酒美食 营养健康"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045653441.gif" width="295" height="202"></a>
-          <p><a href="http://www.whjkcy.com/html/2015/Products_0430/17.html" title="花生——佐酒美食 营养健康">花生——佐酒美食 营养健康</a></p></li>
-          <li>
-          <a href="http://www.whjkcy.com/html/2015/Products_0430/16.html" title="鸭肠 色泽金黄 口感细腻"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045824268.gif" width="295" height="202"></a>
-          <p><a href="http://www.whjkcy.com/html/2015/Products_0430/16.html" title="鸭肠 色泽金黄 口感细腻">鸭肠 色泽金黄 口感细腻</a></p>
-          </li>
-          </ol>
-    <div class="page"><a class="a1">10条</a> <a href="/html/Products/index.html" class="a1">上一页</a> <span>1</span> <a href="/html/Products/2.html">2</a> <a href="/html/Products/2.html" class="a1">下一页</a></div>
+        </volist>
+    </ol>
+    <div class="page">
+      {$_page}
+    </div>
   </div>
 </div>
