@@ -65,13 +65,13 @@
 				
 				$("#" + file.id + " .cancel").click(function() {
 					var fileId = $(this).parents(".uploadify-queue-item").attr("id");
-					$("#img_" + file.id).find("i").click();
+					$("#img_" + file.id).remove();
 					$('#input_' + file.id).remove();
 					$('#file_upload').uploadify('cancel',file.id);
 				});
 				var arr = eval('('+data+')');
 				var file_input = "<input type='hidden' id='input_"+file.id+"' name='video_file[]' value='"+arr.path+','+arr.filename+"'></input>";
-				var img = "<div class='pic_list_box' file_id='"+file.id+"' id='img_"+file.id+"''><i>删除</i><img style='float:left' src='"+arr.path+"' ></div>";
+				var img = "<div style='text-align:left' class='pic_list_box' file_id='"+file.id+"' id='img_"+file.id+"''><i>删除</i><img src='"+arr.path+"' ></div>";
 				$('#file_box').append(file_input);
 				$("#pic_box").append(img);
 			},
@@ -101,5 +101,8 @@
 	$(document).on("click",".pic_list_box > i",function(){
 		var id = $(this).parent().attr("file_id");
 		$('#file_upload').uploadify('cancel',id);
+		$("#img_" + id).remove();
+		$('#input_' + id).remove();
+					
 	})
 </script>
