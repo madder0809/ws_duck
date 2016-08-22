@@ -14,18 +14,22 @@ class QuestionController extends Controller {
     }
     //投资预算
     public function budget(){
+        $info = M("web_info")->where("type = 4")->find();
         $this->display();
     }
     //加盟条件
     public function condition(){
+        $info = M("web_info")->where("type = 5")->find();
         $this->display();
     }
     //加盟流程
     public function process(){
+        $info = M("web_info")->where("type = 6")->find();
         $this->display();
     }
     //加盟费用
     public function cost(){
+        $info = M("web_info")->where("type = 7")->find();
         $this->display();
     }
 }

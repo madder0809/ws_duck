@@ -2,15 +2,25 @@
 namespace Home\Controller;
 use Think\Controller;
 class ShowController extends Controller {
+    //公司简介
     public function intruduce(){
+        $info = M("web_info")->where("type = 1")->find();
         $this->display();
     }
+
+    //公司文化
     public function cultural(){
+        $info = M("web_info")->where("type = 2")->find();
         $this->display();
     }
+
+    //公司团队
     public function team(){
+        $info = M("web_info")->where("type = 3")->find();
         $this->display();
     }
+
+    //公司新闻
     public function news(){
         $article = M('article');
         $count = $article->where("type = 1")->count();
@@ -20,6 +30,8 @@ class ShowController extends Controller {
         $this->assign('list',$list);
         $this->display();
     }
+
+    //行业动态
     public function dynamics(){
    	$article = M('article');
         $count = $article->where("type = 2")->count();
@@ -29,9 +41,13 @@ class ShowController extends Controller {
         $this->assign('list',$list);
         $this->display();
     }
+
+    //联系我们
     public function contact(){
+        $info = M("web_info")->where("type = 8")->find();
         $this->display();
     }
+
     public function view(){
         $id = I("id");
         if(!$id) $this->error("出错，未找到文章");
