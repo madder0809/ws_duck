@@ -1,0 +1,41 @@
+<include file="Public/base"/>
+
+<div class='main'>
+	<div class="details">
+	    <h3>网站信息管理</h3>
+	</div>
+
+	<div class='header_action'>
+		<span>信息列表</span>
+	</div>
+
+	<div class='main_content'>
+		<div class='header_seach'>
+			<form action="{:U('index',array('type'=>$type))}" method="post">
+			标题：<input type='text' name="title" value="{$title}">
+			<input type="submit" value="查询">
+			</form>
+		</div>
+		
+		<table class='table'>
+			<thead>
+				<tr>
+					<th>标题</th>
+					<th class='table_action' style="width: 250px">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="list" id="list">
+					<tr>
+						
+						<td>{$list.title}</td>
+						<td>
+							<a href="{:U('edit',array(id=>$list[id]))}" class="table_btn">编辑</a>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+		{$_page}
+	</div>
+</div>

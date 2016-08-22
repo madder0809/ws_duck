@@ -1,0 +1,128 @@
+<include file="Public/base"/>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<link href="__PUBLIC__/Admin/css/calendar.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/js/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/js/kindeditor/plugins/code/prettify.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/kindeditor/kindeditor-all.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/kindeditor/lang/zh-CN.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/kindeditor/plugins/code/prettify.js"></script>
+<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/Admin/js/kindeditor/plugins/code/prettify.js',
+				uploadJson : '__PUBLIC__/Admin/js/kindeditor/php/upload_json.php',
+				fileManagerJson : '___PUBLIC__/Admin/js/kindeditor/php/file_manager_json.php',
+				allowFileManager : true
+			});
+			prettyPrint();
+		});
+</script>
+<style>
+   #form_bottom input[type='button'], #mask_box_footer input[type='submit'] {
+         height: 30px;
+         width: 80px;
+         margin: 7px 30px;
+         border: 1px solid #ccc;
+         -moz-border-radius: 5px;
+         -webkit-border-radius: 5px;
+         border-radius: 5px;
+         cursor: pointer;
+     }
+    table tr{
+		height:50px;
+    }
+    table td div{
+        color: #333;
+        text-align: right;
+        padding-right: 30px;
+        font-size: 15px;
+    }
+    table td input[type=text],select{
+		width:250px;
+    	height: 25px;
+    	border: 1px solid #ccc;
+    	padding-left:3px;
+    }
+    .form_bottom{
+        width: 45%;
+        margin: 0 auto;
+    }
+    .form_bottom input[type='button'],.form_bottom input[type='submit']{
+		width:120px;
+    	height:35px;
+    	cursor:pointer;
+    }
+
+}
+</style>
+                <div class='main'>
+                    <div class="details">
+                        <h3>
+                        <empty name='id'>
+                        发布
+                        <else/>
+                        编辑
+                        </empty>
+                        </h3>
+                    </div>
+                <div class='main_content'>
+                    <empty name='id'>
+                        <form action='{:U("add")}' name="myform" method="post" enctype="multipart/form-data" class="modal_form">
+                            <else/>
+                        <form action='{:U("edit")}' name="myform" method="post" enctype="multipart/form-data" class="modal_form">
+                    </empty>
+
+                    <table style='width:100%;margin:auto;'>
+                        <tr>
+                            <td><div>标题：</div></td>
+                            <td><input type='text' name='title' value='{$info.title}' style="width: 700px"><span class='mest_input'>*</span></td>
+                        </tr>
+                        <tr>
+                            <td><div>内容：</div></td>
+                            <td>
+                                <div>
+                                    <textarea name="content" style="width:700px;height:350px;visibility:hidden;">{$info.content}</textarea>
+                                    <br />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div>排序：</div></td>
+                            <td><input type='text' name='listorder' value='{$info['listorder']?$info['listorder']:0}'><span class='mest_input'>*</span></td>
+                        </tr>
+                        <tr>
+                            <td><div>发布时间：</div></td>
+                            <td>
+                                <input type='text' name='publishtime' value='{$info['publishtime'] ? $info['publishtime'] : date("Y-m-d H:i:s")}' class="input_time" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})">
+                                <span class='mest_input'>*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div id='prompt_info' style='font-size:16px;color:red;text-align:left;'></div>
+                            </td>
+                        </tr>
+                        <input type="hidden" name="type" value="{$type}">
+                        <input type='hidden' name='id' value='{$info.id}'>
+                        </table>
+                            <div class="form_bottom">
+                                <input type='submit' value='确定'>
+                                <input type="button" value='取消' onclick="window.history.back();">
+                            </div>
+                            </form>
+                </div>
+                </div>
+                <script>
+                    $('#mask_box_footer input[type="submit"]').click(function(){
+                        if($('#mask_box_content input[name=title]').val() == ""){
+                            $('#prompt_info').text('菜单名称不能为空').show();
+                            return false;
+                        }
+                        if($('#mask_box_content input[name=name]').val() == ""){
+                            $('#prompt_info').text('应用名称不能为空').show();
+                            return false;
+                        }
+                        return ajax_post();
+                    });
+                </script>
