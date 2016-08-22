@@ -20,36 +20,8 @@
     <li>
     <a href="{:U('Index/index')}">首页</a>&gt;<a href="{:U('Show/intruduce')}">关于我们</a> &gt; <a href="{:U('Show/team')}">公司团队</a> &gt; </li>
     </ul>
-    <div id="wenzi"><table align="left" border="0" cellpadding="1" cellspacing="1" style="widows: 1; width: 800px;">
-            <tbody>
-            <tr>
-                <td><img src="http://www.027yb.net/uploadfile/2015/0509/20150509052831702.jpg"></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><img src="http://www.027yb.net/uploadfile/2015/0509/20150509052844943.jpg"></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><img src="http://www.027yb.net/uploadfile/2015/0509/20150509052857457.jpg"></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><img src="http://www.027yb.net/uploadfile/2015/0509/20150509052913307.jpg"></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><img src="http://www.027yb.net/uploadfile/2015/0509/20150509052929697.jpg"></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><img src="http://www.027yb.net/uploadfile/2015/0509/20150509052945865.jpg"></td>
-                <td>&nbsp;</td>
-            </tr>
-            </tbody>
-        </table>
-            <br>
-            <br>
+    <div id="wenzi">
+        {$info.content|htmlspecialchars_decode}
         </div>
     </li>
 </div>

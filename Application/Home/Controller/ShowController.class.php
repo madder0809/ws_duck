@@ -5,18 +5,21 @@ class ShowController extends Controller {
     //公司简介
     public function intruduce(){
         $info = M("web_info")->where("type = 1")->find();
+        $this->assign("info",$info);
         $this->display();
     }
 
     //公司文化
     public function cultural(){
         $info = M("web_info")->where("type = 2")->find();
+        $this->assign("info",$info);
         $this->display();
     }
 
     //公司团队
     public function team(){
         $info = M("web_info")->where("type = 3")->find();
+        $this->assign("info",$info);
         $this->display();
     }
 
@@ -45,6 +48,7 @@ class ShowController extends Controller {
     //联系我们
     public function contact(){
         $info = M("web_info")->where("type = 8")->find();
+        $this->assign("info",$info);
         $this->display();
     }
 
