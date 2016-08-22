@@ -6,26 +6,40 @@
  <div class="index_main">
   <li class="index_main_l">
   <h2>最新动态</h2> 
-  <p><a href="{:U('Article/index')}">更多</a></p>
+  <p><a href="{:U('Show/news')}">更多</a></p>
    <ul>
-    <li><div id="bt"><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0511/43.html" title="​鸭脖开店利润分析">​鸭脖开店利润分析</a></div><span><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0511/43.html">【详细】</a></span></li>
-    <li><div id="bt"><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0509/41.html" title="​学习鸭脖技术，就到鸭脖全国加盟总部">​学习鸭脖技术，就到鸭脖全国加盟总部</a></div><span><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0509/41.html">【详细】</a></span></li>
-    <li><div id="bt"><a href="http://www.whjkcy.com/html/2015/xingyedongtai_0509/40.html" title="鸭脖加盟流程">鸭脖加盟流程</a></div><span><a href="http://www.whjkcy.com/html/2015/xingyedongtai_0509/40.html">【详细】</a></span></li>
-    <li><div id="bt"><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0430/4.html" title=" 特色餐饮加盟项目 鸭脖市场最火"> 特色餐饮加盟项目 鸭脖市场最火</a></div><span><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0430/4.html">【详细】</a></span></li>
-    <li><div id="bt"><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0430/2.html" title="鸭脖有多火，5000家门店遍布全国！">鸭脖有多火，5000家门店遍布全国！</a></div><span><a href="http://www.whjkcy.com/html/2015/gongsixinwen_0430/2.html">【详细】</a></span></li>
+   <volist name="news" id="vo">
+    <li>
+    <div id="bt">
+    <a href="{:U('Show/view',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}
+    </a>
+    </div>
+    <span>
+    <a href="{:U('Show/view',array('id'=>$vo['id']))}">【详细】</a>
+    </span>
+    </li>
+    </volist>
    </ul>
   </li>
   <li class="index_main_z">
   <h2>产品展示</h2> 
-  <p><a href="http://www.whjkcy.com/html/Products/">更多</a></p>
+  <p><a href="{:U('Products/index')}">更多</a></p>
   <div class="con">
-    <ul><li><a href="http://www.whjkcy.com/html/2015/Products_0430/21.html" title="鸭舌，辣得让你爽，香得让你醉！"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045408873.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/20.html" title="虾——色泽绛红 香辣入骨"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045448666.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/19.html" title="毛豆——翠绿鲜香 口感柔和"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045526784.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/18.html" title="藕片——入口脆嫩 味鲜爽口"><img src="http://www.027yb.net/uploadfile/2015/0511/20150511113322906.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/17.html" title="花生——佐酒美食 营养健康"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045653441.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/16.html" title="鸭肠 色泽金黄 口感细腻"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045824268.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/15.html" title="鸭翅 韧劲适度 满口留香"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509045914663.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/14.html" title="鸭架 麻辣鲜香 尝而忘返"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509050020917.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/13.html" title="鸭头 韧劲耐嚼 麻辣相宜"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509050114836.gif" width="310" height="172" /></a></li><li><a href="http://www.whjkcy.com/html/2015/Products_0430/12.html" title="鸭掌 皮薄耐嚼 麻辣劲足"><img src="http://www.027yb.net/uploadfile/2015/0509/20150509050219618.gif" width="310" height="172" /></a></li>    </ul>
+    <ul>
+    <volist name="products" id="vo">
+      <li>
+        <a href="{:U('Products/view',array('id'=>$vo['id']))}" title="{$vo.title}">
+        <img src="__ROOT__/{$vo.url}" width="310" height="172" />
+        </a>
+      </li>
+      </volist>
+    </ul>
    </div>
   </li>
   <li class="index_main_r">
    <h2>关于我们</h2> 
    <p><a href="http://www.whjkcy.com/html/Company/">更多</a></p>
-   <div class="wenzi"> 欢迎访问武汉吉客餐饮管理有限公司官方网站！我公司是以特色饮食研发服务、连锁经营为一体的先进企业。1999年公司从武汉起源，本着传承与发扬中华特色饮食为己任，由全国饮食界多名大师组建的技术研发团队，使武汉鸭脖迅速成为众多饮食连锁行业中的知名品牌。公司以技术为平台，以管理为导向，以市场为根源，以品牌为核心，引领更多有梦想的人士共赢未来。
+   <div class="wenzi"> 欢迎访问武氏集团有限公司官方网站！我公司是以特色饮食研发服务、连锁经营为一体的先进企业。1999年公司从武汉起源，本着传承与发扬中华特色饮食为己任，由全国饮食界多名大师组建的技术研发团队，使武汉鸭脖迅速成为众多饮食连锁行业中的知名品牌。公司以技术为平台，以管理为导向，以市场为根源，以品牌为核心，引领更多有梦想的人士共赢未来。
 <div>
 <h1>鸭脖起源</h1>
 <p>鸭脖最早起源于武汉精武路，当时的人们吃鸭的时候，鸭头，鸭爪，鸭脖等鸭附件都是直接被扔掉的。而精明的武汉人觉得这是一种浪费。于是加入花椒，辣椒等多种香草料进行精心卤制，并形成了最初的红遍全国的精武鸭脖。而随着时光的流逝，大众口味的变更。于是在精武鸭脖的基础上又演变升级出了更多不同特色的鸭脖系列，而武汉鸭脖更是其中的典范，它在保留精武鸭脖的同时，又融入了更多的元素，让之前的鸭脖变口味变得更加的丰富多彩，口感更加富有层次，在全国掀起了一股这麻辣风。</p>
