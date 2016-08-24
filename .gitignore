@@ -1,5 +1,6 @@
 data/*
-phpMyAdmin/*
+phpmyadmin/
+phpmyadmin/*
 Application/Runtime/*
 idea/*
 Public/Admin/js/kindeditor/*

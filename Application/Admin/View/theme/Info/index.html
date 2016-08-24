@@ -30,7 +30,7 @@
 						
 						<td>{$list.title}</td>
 						<td>
-							<a href="{:U('edit',array(id=>$list[id]))}" class="table_btn">编辑</a>
+							<a href="{:U('edit',array('id'=>$list[id],'type'=>$list['type']))}" class="table_btn">编辑</a>
 						</td>
 					</tr>
 				</volist>
