@@ -8,3 +8,4 @@ Uploads/*
 Application/Admin/Conf/*
 Application/Home/Conf/*
 Application/Common/Conf/*
+*.swo
