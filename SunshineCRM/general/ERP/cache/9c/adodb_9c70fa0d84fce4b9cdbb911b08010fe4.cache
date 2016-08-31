@@ -1,0 +1,8 @@
+====1,1472543862,select+text+from+systemhelp+where+systemhelpname%3D%27%CF%B5%CD%B3%D3%C3%BB%A7%B9%DC%C0%ED%27
+O:25:"ADORecordSet_array_mysqli":37:{s:12:"databaseType";s:5:"array";s:6:"_array";a:1:{i:0;a:1:{s:4:"text";s:256:"1、此权限仅对需要进行用户管理的人员进行开放;
+2、数据权限固定为三级，老板、部门经理、职员，上级能看到下级数据，同级数据隔离，老板能看到所有数据;
+3、新建用户后，可点击分配菜单功能，设置此用户能使用哪些功能;
+4、删除用户，如有客户隶属此用户，请先进行客户移交。";}}s:6:"_types";N;s:9:"_colnames";N;s:9:"_skiprow1";b:0;s:13:"_fieldobjects";a:1:{i:0;O:8:"stdClass":18:{s:4:"name";s:4:"text";s:7:"orgname";s:4:"text";s:5:"table";s:10:"systemhelp";s:8:"orgtable";s:10:"systemhelp";s:3:"def";s:0:"";s:2:"db";s:3:"CRM";s:7:"catalog";s:3:"def";s:10:"max_length";i:256;s:6:"length";i:33554430;s:9:"charsetnr";i:28;s:5:"flags";i:4113;s:4:"type";i:252;s:8:"decimals";i:0;s:11:"primary_key";i:0;s:8:"not_null";i:1;s:14:"auto_increment";i:0;s:6:"binary";i:0;s:8:"unsigned";i:0;}}s:7:"canSeek";b:1;s:12:"affectedrows";b:0;s:8:"insertid";b:0;s:3:"sql";s:63:"select text from systemhelp where systemhelpname='系统用户管理'";s:6:"compat";b:0;s:12:"dataProvider";s:6:"native";s:6:"fields";a:1:{s:4:"text";s:256:"1、此权限仅对需要进行用户管理的人员进行开放;
+2、数据权限固定为三级，老板、部门经理、职员，上级能看到下级数据，同级数据隔离，老板能看到所有数据;
+3、新建用户后，可点击分配菜单功能，设置此用户能使用哪些功能;
+4、删除用户，如有客户隶属此用户，请先进行客户移交。";}s:8:"blobSize";i:100;s:3:"EOF";b:0;s:14:"emptyTimeStamp";s:6:"&nbsp;";s:9:"emptyDate";s:6:"&nbsp;";s:5:"debug";b:0;s:11:"timeCreated";i:1472543862;s:4:"bind";b:0;s:9:"fetchMode";i:2;s:10:"connection";b:0;s:10:"_numOfRows";i:1;s:12:"_numOfFields";i:1;s:8:"_queryID";i:-1;s:11:"_currentRow";i:0;s:7:"_closed";b:0;s:7:"_inited";b:1;s:4:"_obj";N;s:6:"_names";N;s:12:"_currentPage";i:-1;s:12:"_atFirstPage";b:0;s:11:"_atLastPage";b:0;s:11:"_lastPageNo";i:-1;s:15:"_maxRecordCount";i:0;s:8:"datetime";b:0;s:11:"oldProvider";s:6:"native";}
